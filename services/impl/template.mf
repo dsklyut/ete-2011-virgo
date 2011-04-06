@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ETE Sample Services
+Bundle-SymbolicName: com.dsklyut.ete.virgo.services.impl
+Bundle-Version: 1.0.0.BUILD-SNAPSHOT
+Import-Template: com.dsklyut.ete.virgo.jpa.*;version="[1,2)",
+ com.dsklyut.ete.virgo.api.*;version="[1,2)"
+Excluded-Exports: *.internal.*
