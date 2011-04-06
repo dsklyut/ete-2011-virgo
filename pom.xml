@@ -14,8 +14,10 @@
 
     <modules>
         <module>dbaccess</module>
+        <module>jndi</module>
+        <module>jpa</module>
     </modules>
-    
+
     <dependencies>
         <dependency>
             <groupId>org.eclipse.osgi</groupId>
@@ -24,12 +26,41 @@
             <optional>true</optional>
         </dependency>
 
-        <!-- <dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.6.1</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>1.6.1</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <!--<artifactId>com.springsource.slf4j.juli</artifactId>-->
+            <artifactId>jul-to-slf4j</artifactId>
+            <version>1.6.1</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>com.springsource.ch.qos.logback.classic</artifactId>
+            <version>0.9.24</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
             <groupId>org.junit</groupId>
             <artifactId>com.springsource.org.junit</artifactId>
             <version>4.8.1</version>
             <scope>test</scope>
-        </dependency> -->
+        </dependency>
     </dependencies>
 
     <build>
@@ -97,9 +128,9 @@
                         </goals>
                         <!--<phase>package</phase>-->
                         <!--<configuration>-->
-                            <!--<inputPath>${project.build.directory}/${project.build.finalName}.${project.packaging}</inputPath>-->
-                            <!--<outputPath>${project.build.directory}/${project.build.finalName}.${project.packaging}</outputPath>-->
-                            <!--<osgiProfilePath>${basedir}/java6-server.profile</osgiProfilePath>-->
+                        <!--<inputPath>${project.build.directory}/${project.build.finalName}.${project.packaging}</inputPath>-->
+                        <!--<outputPath>${project.build.directory}/${project.build.finalName}.${project.packaging}</outputPath>-->
+                        <!--<osgiProfilePath>${basedir}/java6-server.profile</osgiProfilePath>-->
                         <!--</configuration>-->
                     </execution>
                 </executions>
@@ -126,7 +157,11 @@
     </build>
 
     <repositories>
-
+        <repository>
+            <id>eclipse.link.release</id>
+            <name>Eclipse Link Maven Repo</name>
+            <url>http://download.eclipse.org/rt/eclipselink/maven.repo</url>
+        </repository>
         <repository>
             <id>com.springsource.repository.bundles.release</id>
             <name>SpringSource Enterprise Bundle Repository - SpringSource Bundle Releases</name>
