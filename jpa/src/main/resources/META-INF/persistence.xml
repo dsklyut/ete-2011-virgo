@@ -16,7 +16,8 @@
 
         <properties>
             <!--<property name="eclipselink.target-database" value="H2"/>-->
-            <!--<property name="eclipselink.target-database" value=""/>-->
+
+            <!-- datasource is automatically looked up in service registry - see dbaccess module -->
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
             <property name="javax.persistence.jdbc.url" value="jdbc:h2:file:~/virgo/jpa/test;AUTO_SERVER=TRUE"/>
             <property name="javax.persistence.jdbc.user" value="sa"/>
@@ -31,7 +32,7 @@
             <property name="eclipselink.jdbc.read-connections.min" value="1"/>
             <property name="eclipselink.jdbc.write-connections.min" value="1"/>
             <property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
-            <property name="eclipselink.ddl-generation.output-mode" value="both"/>
+            <!--<property name="eclipselink.ddl-generation.output-mode" value="both"/>-->
             <property name="eclipselink.weaving" value="false"/>
 
         </properties>

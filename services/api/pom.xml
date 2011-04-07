@@ -3,8 +3,8 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>com.dsklyut.ete.virgo.services</artifactId>
-        <groupId>com.dsklyut.ete.virgo</groupId>
+        <artifactId>services.parent</artifactId>
+        <groupId>com.dsklyut.ete.virgo.services</groupId>
         <version>1.0.0.BUILD-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -16,6 +16,12 @@
             <groupId>com.dsklyut.ete.virgo</groupId>
             <artifactId>com.dsklyut.ete.virgo.jpa</artifactId>
             <version>1.0.0.BUILD-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>1.6.2</version>
         </dependency>
     </dependencies>
 </project>

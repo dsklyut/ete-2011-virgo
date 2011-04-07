@@ -55,12 +55,11 @@ final class StandardSchedulingService implements SchedulingService {
     }
 
     @Override
-    public Presentation registerPresentation(String title, String description, SpeakerInfo... speakers) {
+    public Presentation schedulePresentation(String title, String description, SpeakerInfo... speakers) {
         Presentation presentation = new Presentation(title, description);
         for (SpeakerInfo speakerInfo : speakers) {
             Speaker speaker = new Speaker(new Person(speakerInfo.getFirstName(),
                                                      speakerInfo.getLastName(),
-                                                     null,
                                                      speakerInfo.getEmail()));
             speaker.addPresentation(presentation);
             jpaTemplate.persist(speaker);

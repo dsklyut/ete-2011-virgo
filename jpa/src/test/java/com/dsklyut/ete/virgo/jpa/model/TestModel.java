@@ -147,7 +147,7 @@ public class TestModel {
     }
 
     private static Person createPerson(String first, String last) {
-        return new Person(first, last, null, first + "@" + last + ".com");
+        return new Person(first, last, first + "@" + last + ".com");
 
     }
 

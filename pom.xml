@@ -17,6 +17,7 @@
         <module>dbaccess</module>
         <module>jpa</module>
         <module>services</module>
+        <module>web</module>
     </modules>
 
     <dependencyManagement>
@@ -96,6 +97,19 @@
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>org.springframework.aspects</artifactId>
+                <version>${spring.version}</version>
+                <scope>provided</scope>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.apache.commons</groupId>
+                        <artifactId>com.springsource.org.apache.commons.logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>org.springframework.web.servlet</artifactId>
                 <version>${spring.version}</version>
                 <scope>provided</scope>
                 <exclusions>
@@ -245,11 +259,12 @@
                             <goal>bundlor</goal>
                         </goals>
                         <!--<phase>package</phase>-->
-                        <!--<configuration>-->
+                        <configuration>
+                            <failOnWarnings>true</failOnWarnings>
                         <!--<inputPath>${project.build.directory}/${project.build.finalName}.${project.packaging}</inputPath>-->
                         <!--<outputPath>${project.build.directory}/${project.build.finalName}.${project.packaging}</outputPath>-->
                         <!--<osgiProfilePath>${basedir}/java6-server.profile</osgiProfilePath>-->
-                        <!--</configuration>-->
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>

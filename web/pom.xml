@@ -9,15 +9,15 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.dsklyut.ete.virgo.services</groupId>
-    <artifactId>services.parent</artifactId>
+    <groupId>com.dsklyut.ete.virgo.web</groupId>
+    <artifactId>web.parent</artifactId>
     <version>1.0.0.BUILD-SNAPSHOT</version>
     <packaging>pom</packaging>
-
-    <modules>
-        <module>api</module>
-        <module>impl</module>
-    </modules>
     
+    <modules>
+        <module>host</module>
+    </modules>
+
+
 
 </project>

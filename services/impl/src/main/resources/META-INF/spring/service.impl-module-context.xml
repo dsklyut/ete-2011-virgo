@@ -15,6 +15,13 @@
     <!-- transaction support @Transactional at the class level -->
     <tx:annotation-driven mode="aspectj"/>
 
+    <!-- decorate that allows native entity manager factory to participate in spring managed transactions -->
+    <bean id="entityManagerFactoryDecorator"
+          class="com.dsklyut.ete.virgo.services.impl.internal.support.SpringEntityManagerFactoryDecorator">
+        <constructor-arg ref="entityManagerFactory"/>
+        <property name="persistenceUnitName" value="ete"/>
+    </bean>
+
     <!-- bean post-processor for JPA annotations -->
     <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>
 
@@ -22,16 +29,16 @@
         Post-processor to perform exception translation on @Repository classes (from native
         exceptions such as JPA PersistenceExceptions to Spring's DataAccessException hierarchy).
     -->
-    <!--<bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>-->
+    <bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
 
 
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
-        <property name="entityManagerFactory" ref="entityManagerFactory"/>
+        <property name="entityManagerFactory" ref="entityManagerFactoryDecorator"/>
     </bean>
 
     <!-- jpaTemplate for access -->
     <bean id="jpaTemplate" class="org.springframework.orm.jpa.JpaTemplate">
-        <constructor-arg ref="entityManagerFactory"/>
+        <constructor-arg ref="entityManagerFactoryDecorator"/>
     </bean>
 
 </beans>

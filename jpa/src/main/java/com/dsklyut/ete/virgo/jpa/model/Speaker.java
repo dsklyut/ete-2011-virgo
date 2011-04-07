@@ -1,11 +1,11 @@
 package com.dsklyut.ete.virgo.jpa.model;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -22,7 +22,10 @@ public class Speaker extends AbstractEntity {
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "SPEAKER_PRESENTATIONS")
-    public Set<Presentation> presentations = new HashSet<Presentation>();
+    private Set<Presentation> presentations = new HashSet<Presentation>();
+
+    @Column(length = 2500, nullable = true)
+    private String bio;
 
     public Speaker() {
     }
@@ -50,5 +53,13 @@ public class Speaker extends AbstractEntity {
     public void addPresentation(Presentation preso) {
         this.presentations.add(preso);
         preso.getSpeakers().add(this);
+    }
+
+    public String getBio() {
+        return bio;
+    }
+
+    public void setBio(String bio) {
+        this.bio = bio;
     }
 }

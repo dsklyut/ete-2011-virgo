@@ -4,5 +4,16 @@ Bundle-Name: ETE Sample Services
 Bundle-SymbolicName: com.dsklyut.ete.virgo.services.impl
 Bundle-Version: 1.0.0.BUILD-SNAPSHOT
 Import-Template: com.dsklyut.ete.virgo.jpa.*;version="[1,2)",
- com.dsklyut.ete.virgo.api.*;version="[1,2)"
+ com.dsklyut.ete.virgo.services.api.*;version="[1,2)",
+ javax.persistence.*;version=1.1;jpa=2.0
+Import-Bundle:
+ org.eclipse.persistence.core;version="[2.2.0, 2.3.0)",
+ org.eclipse.persistence.jpa;version="[2.2.0, 2.3.0)",
+ javax.persistence;version="[2.0.3, 2.1.0)"
+Import-Package:
+ org.aspectj.lang;version="0",
+ org.aspectj.runtime.reflect;version="0"
+Import-Library:
+ org.springframework.spring;version="[3.0.3, 3.1)"
 Excluded-Exports: *.internal.*
+Excluded-Imports: org.springframework.*

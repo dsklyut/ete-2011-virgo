@@ -9,12 +9,13 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.dsklyut.ete.virgo</groupId>
-    <artifactId>com.dsklyut.ete.virgo.dbaccess</artifactId>
+    <groupId>com.dsklyut.ete.virgo.dbaccess</groupId>
+    <artifactId>dbaccess.parent</artifactId>
     <version>1.0.0.BUILD-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
         <module>h2</module>
+        <!--<module>mysql</module>-->
     </modules>
 </project>

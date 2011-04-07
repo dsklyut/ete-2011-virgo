@@ -6,7 +6,4 @@
     <bean id="entityManagerFactory" class="javax.persistence.Persistence" factory-method="createEntityManagerFactory">
         <constructor-arg value="ete"/>
     </bean>
-    <!--<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">-->
-    <!--</bean>-->
-
 </beans>

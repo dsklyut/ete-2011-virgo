@@ -3,5 +3,6 @@ Bundle-ManifestVersion: 2
 Bundle-Name: JPA Entities
 Bundle-SymbolicName: com.dsklyut.ete.virgo.jpa
 Bundle-Version: 1.0.0.BUILD-SNAPSHOT
-Import-Template: javax.persistence;version=1.1;jpa=2.0
+Import-Template: javax.persistence.*;version=1.1;jpa=2.0
 Excluded-Exports: *.internal.*
+Excluded-Imports: org.eclipse.persistence.*

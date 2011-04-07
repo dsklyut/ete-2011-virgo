@@ -2,10 +2,7 @@ package com.dsklyut.ete.virgo.jpa.model;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
-import javax.persistence.Embedded;
 import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
 
 /**
  * User: dsklyut
@@ -19,21 +16,26 @@ public class Person extends AbstractEntity {
     private String firstName;
     @Basic
     private String lastName;
+
+    @Column(unique = true)
+    private String email;
+
     @Basic
     private String phone;
 
     public Person() {
     }
 
-    public Person(String firstName, String lastName, String phone, String email) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.phone = phone;
-        this.email = email;
+    public Person(String firstName, String lastName, String email) {
+        this(firstName, lastName, email, null);
     }
 
-    @Column(unique = true)
-    private String email;
+    public Person(String firstName, String lastName, String email, String phone) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.phone = phone;
+    }
 
     public String getFirstName() {
         return firstName;

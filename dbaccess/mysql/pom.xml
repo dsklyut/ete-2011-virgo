@@ -3,20 +3,20 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>dbaccess.parent</artifactId>
+        <artifactId>parent</artifactId>
         <groupId>com.dsklyut.ete.virgo.dbaccess</groupId>
         <version>1.0.0.BUILD-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>com.dsklyut.ete.virgo.dbaccess.h2</artifactId>
-    <version>1.3.0.BUILD-SNAPSHOT</version>
+    <artifactId>com.dsklyut.ete.virgo.dbaccess.mysql</artifactId>
+    <version>1.0.0.BUILD-SNAPSHOT</version>
 
     <dependencies>
         <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <version>1.3.154</version>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.15</version>
         </dependency>
         <dependency>
             <groupId>org.osgi</groupId>
