@@ -21,6 +21,7 @@
         <constructor-arg ref="entityManagerFactory"/>
         <property name="persistenceUnitName" value="ete"/>
     </bean>
+    <!--<alias name="entityManagerFactory" alias="entityManagerFactoryDecorator"/>-->
 
     <!-- bean post-processor for JPA annotations -->
     <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>

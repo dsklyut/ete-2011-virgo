@@ -10,4 +10,7 @@
 
     <!-- look up entityManagerFactory by a punit name -->
     <osgi:reference id="entityManagerFactory" interface="javax.persistence.EntityManagerFactory" filter="(osgi.unit.name=ete)"/>
+
+    <osgi:service ref="standardRegistrationService" interface="com.dsklyut.ete.virgo.services.api.RegistrationService"/>
+    <osgi:service ref="standardSchedulingService" interface="com.dsklyut.ete.virgo.services.api.SchedulingService"/>
 </beans>
